@@ -4,58 +4,36 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mis Finanzas</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f4f6f9;
-      color: #333;
-      text-align: center;
-      padding: 20px;
-    }
-    header {
-      background: #4CAF50;
-      color: white;
-      padding: 15px;
-      border-radius: 10px;
-    }
-    .card {
-      background: white;
-      margin: 20px auto;
-      padding: 15px;
-      border-radius: 10px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      max-width: 400px;
-    }
-    footer {
-      margin-top: 30px;
-      font-size: 0.9em;
-      color: #666;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
-    <h1>💰 Mis Finanzas</h1>
-    <p>Control sencillo de ingresos y gastos</p>
+    <h1>Mis Finanzas</h1>
   </header>
 
-  <div class="card">
-    <h2>Ingresos</h2>
-    <p>$0</p>
-  </div>
+  <main>
+    <form id="form">
+      <input type="text" id="descripcion" placeholder="Descripción" required>
+      <select id="tipo">
+        <option value="ingreso">Ingreso</option>
+        <option value="gasto">Gasto</option>
+      </select>
+      <input type="number" id="monto" placeholder="Monto en COP" step="any" required>
+      <button type="submit">Agregar</button>
+    </form>
 
-  <div class="card">
-    <h2>Gastos</h2>
-    <p>$0</p>
-  </div>
+    <h2>Historial</h2>
+    <ul id="historial"></ul>
 
-  <div class="card">
-    <h2>Balance</h2>
-    <p>$0</p>
-  </div>
+    <div id="resumen">
+      <button onclick="window.print()">Imprimir</button>
+    </div>
+  </main>
 
   <footer>
-    <p>Hecho con ❤️ por Ashly</p>
+    <p>✨ Organiza tu dinero, organiza tu vida ✨</p>
   </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
